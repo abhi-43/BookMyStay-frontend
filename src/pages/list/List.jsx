@@ -22,7 +22,7 @@ const List = () => {
   const [max, setMax] = useState(undefined);
 
   
-  const { data, loading, error, reFetch } = useFetch(`${process.env.BACKEND_URL}/hotels?city=${destination}&min=${min || 0}&max=${max || 9999}`)
+  const { data, loading, error, reFetch } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/hotels?city=${destination}&min=${min || 0}&max=${max || 9999}`)
 
   const handleClick = () =>{
       reFetch();

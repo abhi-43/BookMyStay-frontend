@@ -41,7 +41,7 @@ const SignUp = () => {
 
     const userRegister = async (user)=>{
        
-           await axios.post(`${process.env.BACKEND_URL}/auth/register`, user)
+           await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/register`, user)
             .then(res => {
                 setLoading(false)
                 navigate("/login")

@@ -27,10 +27,12 @@ const handleSubmit = async (event) => {
   const data = new FormData(event.currentTarget);
 
   const credentials = {email, password}
-  console.log(credentials)
+  console.log(credentials, "PAHLE WALA MAAL")
   dispatch({ type: "LOGIN_START" });
     try { 
-      const res = await axios.post(`${process.env.BACKEND_URL}/auth/login`, credentials);
+      console.log("NAYA MAAL", process.env.REACT_APP_BACKEND_URL)
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, credentials);
+      console.log(res.data, "BAAD WALA MAAL")
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
       localStorage.setItem("access_token", res.data.access_token);
       navigate("/")
