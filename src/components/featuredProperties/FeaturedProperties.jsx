@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch.js"
 
 const FeaturedProperties = () => {
 
-    const { data, loading, error } = useFetch("/hotels?featured=true&limit=4")
+    const { data, loading, error } = useFetch(`${process.env.BACKEND_URL}/hotels?featured=true&limit=4`)
 
     return (
         <div className="fp">

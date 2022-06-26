@@ -41,7 +41,7 @@ const SignUp = () => {
 
     const userRegister = async (user)=>{
        
-           await axios.post("/auth/register", user)
+           await axios.post(`${process.env.BACKEND_URL}/auth/register`, user)
             .then(res => {
                 setLoading(false)
                 navigate("/login")
@@ -53,45 +53,7 @@ const SignUp = () => {
     }
 
   return (
-    // <div>
-    //     <div className='row justify-content-center mt-5'>
-    //     <div className="col-md-5 my-4">
-    //         <div>
-    //             <h1 className=' heading'>SIGN UP</h1>
-
-    //             <div className='m-2'>
-    //             <input type="text" className='form-control' placeholder='Name' 
-    //              value={name} onChange={(e) => setName(e.target.value)} />
-    //         </div>
-
-    //         <div className='m-2'>
-    //             <input type="email" className='form-control' placeholder='Email' 
-    //             value={email} onChange={(e) => setEmail(e.target.value)} />
-    //         </div>
-
-    //         <div className='m-2'>
-    //             <input type="number" className='form-control' placeholder='Mobile' 
-    //             value={phone} onChange={(e) => setPhone(e.target.value)} />
-    //         </div>
-
-    //         <div className='m-2'>
-    //             <input type="password" className="form-control" placeholder="Password" 
-    //             value={password} onChange={(e) => setPassword(e.target.value)} />
-    //         </div>
-
-    //         <div className='m-2'>
-    //             <input type="password" className="form-control" placeholder="Confirm Password" 
-    //             value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-    //         </div>
-
-    //         <div className='m-2'>
-    //             <button className='btn card_btn w-100' disabled = {loading} onClick={handleRegister} >SUBMIT</button>
-    //         </div>
-    //         </div>
-    //     </div>
-    // </div>
-
-    // </div>
+    
     <Container component="main" maxWidth="xs">
         
         <Box
